@@ -1,4 +1,4 @@
-#include "include/server.h"
+#include "include/game_logic.h"
 
 #include <iostream>
 
@@ -14,7 +14,7 @@ int main() {
   PrintBoard();
   for(char oper: input) {
     bool flag;
-    if(oper == 'u') {
+    if(oper == 'z') {
       std::cout << "Tried to undo previous operation.";
       flag = Undo();
     } else {

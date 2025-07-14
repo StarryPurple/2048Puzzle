@@ -1,7 +1,7 @@
-#include "include/client.h"
+#include "include/user_logic.h"
 
 #include "include/utils.h"
-#include "include/server.h"
+#include "include/game_logic.h"
 
 namespace PZ2048 {
 

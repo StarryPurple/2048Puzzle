@@ -1,5 +1,5 @@
-#ifndef PUZZLE_2048_CLIENT_H
-#define PUZZLE_2048_CLIENT_H
+#ifndef PUZZLE_2048_USER_LOGIC_H
+#define PUZZLE_2048_USER_LOGIC_H
 
 namespace PZ2048 {
 
@@ -26,5 +26,4 @@ char Decide();
 
 }
 
-
-#endif // PUZZLE_2048_CLIENT_H
+#endif // PUZZLE_2048_USER_LOGIC_H

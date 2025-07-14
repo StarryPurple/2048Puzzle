@@ -1,5 +1,5 @@
-#ifndef PUZZLE_2048_SERVER_H
-#define PUZZLE_2048_SERVER_H
+#ifndef PUZZLE_2048_GAME_LOGIC_H
+#define PUZZLE_2048_GAME_LOGIC_H
 
 #include <string>
 #include <vector>
@@ -128,8 +128,8 @@ void PrintBoard();
 bool Redo();
 */
 
-// Actually the following function should also be written in server.cpp.
-// But for banning you from overwriting it, we choose to define it here.
+// Actually the following functions should also be written in server.cpp.
+// But for banning you from overwriting, we choose to define here.
 
 /**
  * @note This function is designed for debugging and testing.
@@ -161,6 +161,21 @@ inline std::pair<std::pair<int, int>, int> TryGenerateTile() {
   return {{row, col}, val};
 }
 
+/**
+ * @return The identity string of the board status.
+ */
+inline std::string SerializeBoard() {
+  int row_num = RowNum(), col_num = ColNum();
+  std::string res;
+  for(int i = 0; i < row_num; i++) {
+    for(int j = 0; j < col_num; j++) {
+      res += std::to_string(GetTile(i, j));
+      if(j != col_num - 1) res += ' ';
+    }
+    if(i != row_num - 1) res += '\n';
+  }
+  return res;
+}
 }
 
-#endif // PUZZLE_2048_SERVER_H
+#endif // PUZZLE_2048_GAME_LOGIC_H
