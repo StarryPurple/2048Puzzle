@@ -23,12 +23,12 @@ std::pair<int, int> EndGame();
 /**
  * @return number of board rows.
  */
-int RowNum();
+int GetRows();
 
 /**
  * @return number of board columns.
  */
-int ColNum();
+int GetCols();
 
 // I've thought of using enum classes, but maybe it's a bit too fast for you.
 // enum class Dir { Invalid, Left, Right, Up, Down };
@@ -88,7 +88,7 @@ int Steps();
 /**
  * @return whether the largest number on the board reaches the given value.
  */
-bool ReachedTarget(int target);
+bool HasReachedTarget(int target = 2048);
 
 /**
  * @return whether no valid operation can be performed.
@@ -145,7 +145,7 @@ bool Redo();
  */
 inline std::pair<std::pair<int, int>, int> TryGenerateTile() {
   std::vector<std::pair<int, int>> slot_list;
-  int row_num = RowNum(), col_num = ColNum();
+  int row_num = GetRows(), col_num = GetCols();
   for(int i = 0; i < row_num; i++)
     for(int j = 0; j < col_num; j++)
       if(GetTile(i, j) == 0)
@@ -165,7 +165,7 @@ inline std::pair<std::pair<int, int>, int> TryGenerateTile() {
  * @return The identity string of the board status.
  */
 inline std::string SerializeBoard() {
-  int row_num = RowNum(), col_num = ColNum();
+  int row_num = GetRows(), col_num = GetCols();
   std::string res;
   for(int i = 0; i < row_num; i++) {
     for(int j = 0; j < col_num; j++) {

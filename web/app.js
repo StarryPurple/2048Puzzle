@@ -4,36 +4,98 @@ const gameBoardElement = document.getElementById('game-board');
 const scoreElement = document.getElementById('score');
 const stepsElement = document.getElementById('steps');
 const messageElement = document.getElementById('game-message');
-const BOARD_SIZE = 4;
+const inputRowsElement = document.getElementById('input-rows');
+const inputColsElement = document.getElementById('input-cols');
+const setSizeResetBtn = document.getElementById('set-size-reset');
 
-function createBoardHTML() {
+let currentBoardRows = 4;
+let currentBoardCols = 4;
+const BASE_CELL_SIZE = 100; // Size of a cell in a 4x4 grid (100px)
+const BASE_GAP_SIZE = 10;   // Gap size in a 4x4 grid (10px)
+
+function calculateCellSize(rows, cols) {
+    const maxDim = Math.max(rows, cols);
+    // Keep cell size same as 4x4 cell size,
+    // so fixed 100px width/height and 10px gap.
+    // The total board size will simply grow/shrink.
+    return { cellSize: BASE_CELL_SIZE, gap: BASE_GAP_SIZE };
+}
+
+function createBoardHTML(rows, cols) {
     gameBoardElement.innerHTML = '';
-    for (let i = 0; i < BOARD_SIZE; i++) {
-        for (let j = 0; j < BOARD_SIZE; j++) {
+    const { cellSize, gap } = calculateCellSize(rows, cols);
+
+    gameBoardElement.style.gridTemplateColumns = `repeat(${cols}, ${cellSize}px)`;
+    gameBoardElement.style.gridTemplateRows = `repeat(${rows}, ${cellSize}px)`;
+    gameBoardElement.style.gap = `${gap}px`;
+
+    // Adjust board padding if necessary, or let it be fixed
+    // gameBoardElement.style.padding = `${gap}px`;
+
+    // Calculate total board width/height to fit content properly
+    gameBoardElement.style.width = `${cols * cellSize + (cols - 1) * gap + 2 * gap}px`;
+    gameBoardElement.style.height = `${rows * cellSize + (rows - 1) * gap + 2 * gap}px`;
+
+
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
             const cell = document.createElement('div');
             cell.classList.add('game-cell');
             cell.id = `cell-${i}-${j}`;
+            cell.style.width = `${cellSize}px`;
+            cell.style.height = `${cellSize}px`;
             gameBoardElement.appendChild(cell);
         }
     }
+    // Update .game-cell styles dynamically for font size for very small/large boards
+    document.querySelectorAll('.game-cell').forEach(cell => {
+        const value = parseInt(cell.textContent || '0');
+        if (value > 128 && value <= 512) {
+            cell.style.fontSize = '30px';
+        } else if (value > 512 && value <= 1024) {
+            cell.style.fontSize = '24px';
+        } else if (value > 1024) {
+            cell.style.fontSize = '20px'; // Even smaller for very large numbers
+        } else {
+            cell.style.fontSize = '36px'; // Default for 2, 4, 8, 16, 32, 64, 128
+        }
+    });
 }
 
-function updateDisplayFromData(boardString, score, steps, stuck, reachedTarget = false) {
-    const rows = boardString.trim().split('\n');
-    for (let i = 0; i < rows.length; i++) {
-        const cells = rows[i].split(' ');
-        for (let j = 0; j < cells.length; j++) {
-            const value = parseInt(cells[j]);
+function updateDisplayFromData(boardString, score, steps, stuck, reachedTarget = false, rows = 4, cols = 4) {
+    // If the board dimensions changed, recreate the HTML board structure
+    if (rows !== currentBoardRows || cols !== currentBoardCols) {
+        currentBoardRows = rows;
+        currentBoardCols = cols;
+        createBoardHTML(rows, cols);
+    }
+
+    const boardValues = boardString.trim().split('\n').map(row => row.split(' ').map(Number));
+
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            const value = boardValues[i][j];
             const cellElement = document.getElementById(`cell-${i}-${j}`);
             if (cellElement) {
                 cellElement.textContent = value === 0 ? '' : value;
                 cellElement.className = 'game-cell';
                 cellElement.classList.add(`tile-${value}`);
+
+                // Dynamic font size adjustment for large numbers if not covered by CSS
+                if (value > 128 && value <= 512) {
+                    cellElement.style.fontSize = '30px';
+                } else if (value > 512 && value <= 1024) {
+                    cellElement.style.fontSize = '24px';
+                } else if (value > 1024) {
+                    cellElement.style.fontSize = '20px';
+                } else {
+                    cellElement.style.fontSize = '36px';
+                }
             }
         }
     }
-    if (scoreElement) scoreElement.textContent = `Score: ${score}`;
-    if (stepsElement) stepsElement.textContent = `Steps: ${steps}`;
+    scoreElement.textContent = `Score: ${score}`;
+    stepsElement.textContent = `Steps: ${steps}`;
 
     if (messageElement) {
         if (stuck) {
@@ -62,7 +124,7 @@ async function updateDisplay() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        updateDisplayFromData(data.board, data.score, data.steps, data.stuck, data.reached_2048 || false);
+        updateDisplayFromData(data.board, data.score, data.steps, data.stuck, data.reached_2048 || false, data.rows, data.cols);
     } catch (error) {
         console.error("Error fetching board state:", error);
         if (messageElement) {
@@ -89,11 +151,8 @@ async function sendMove(direction) {
         }
         const data = await response.json();
         if (data.status === 'success') {
-            console.log("Move successful, board updated:", data.board);
-            updateDisplayFromData(data.board, data.score, data.steps, data.stuck, data.reached_2048 || false);
-
+            updateDisplayFromData(data.board, data.score, data.steps, data.stuck, data.reached_2048 || false, data.rows, data.cols);
         } else {
-            console.error("Move failed:", data.error || "Unknown error");
             if (messageElement) {
                 messageElement.textContent = `Move failed: ${data.error || "Unknown error"}`;
                 messageElement.style.display = 'block';
@@ -121,11 +180,8 @@ async function sendUndo() {
         }
         const data = await response.json();
         if (data.status === 'success') {
-            console.log("Undo successful, board updated:", data.board);
-            updateDisplayFromData(data.board, data.score, data.steps, false, false);
-
+            updateDisplayFromData(data.board, data.score, data.steps, data.stuck, data.reached_2048 || false, data.rows, data.cols);
         } else {
-            console.warn("Undo failed:", data.message || "Unknown error");
             if (messageElement) {
                 messageElement.textContent = data.message || "Undo failed.";
                 messageElement.style.display = 'block';
@@ -144,23 +200,28 @@ async function sendUndo() {
     }
 }
 
-async function initializeGame() {
+async function initializeGame(rows, cols) {
     try {
-        const response = await fetch(`${API_BASE_URL}/init`, { method: 'POST' });
+        const initData = { rows: rows, cols: cols };
+        const response = await fetch(`${API_BASE_URL}/init`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(initData)
+        });
         if (!response.ok) {
             const errorData = await response.json();
             throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.error || response.statusText}`);
         }
         const data = await response.json();
-        console.log(data.message);
-        updateDisplayFromData(data.board, data.score, data.steps, false, false);
+        updateDisplayFromData(data.board, data.score, data.steps, false, false, data.rows, data.cols);
         if (messageElement) {
             messageElement.textContent = "";
             messageElement.style.display = 'none';
             messageElement.style.backgroundColor = '';
             messageElement.style.color = '';
         }
-
     } catch (error) {
         console.error("Error initializing game:", error);
         if (messageElement) {
@@ -172,16 +233,26 @@ async function initializeGame() {
     }
 }
 
-createBoardHTML();
-initializeGame();
+function handleSetSizeAndReset() {
+    const rows = parseInt(inputRowsElement.value);
+    const cols = parseInt(inputColsElement.value);
+    initializeGame(rows, cols);
+}
 
-// 事件监听器
+// Initial game setup
+inputRowsElement.value = currentBoardRows;
+inputColsElement.value = currentBoardCols;
+createBoardHTML(currentBoardRows, currentBoardCols);
+initializeGame(currentBoardRows, currentBoardCols);
+
+// Event Listeners
 document.getElementById('up').addEventListener('click', () => sendMove('w'));
 document.getElementById('left').addEventListener('click', () => sendMove('a'));
 document.getElementById('down').addEventListener('click', () => sendMove('s'));
 document.getElementById('right').addEventListener('click', () => sendMove('d'));
 document.getElementById('undo-btn').addEventListener('click', sendUndo);
-document.getElementById('reset').addEventListener('click', initializeGame);
+document.getElementById('reset').addEventListener('click', () => initializeGame(currentBoardRows, currentBoardCols));
+setSizeResetBtn.addEventListener('click', handleSetSizeAndReset);
 
 document.addEventListener('keydown', (event) => {
     let dir = '';
@@ -189,13 +260,13 @@ document.addEventListener('keydown', (event) => {
         event.preventDefault();
     }
 
-    if (event.key === 'ArrowUp' || event.key === 'w') {
+    if (event.key === 'ArrowUp' || event.key === 'w' || event.key === 'W') {
         dir = 'w';
-    } else if (event.key === 'ArrowLeft' || event.key === 'a') {
+    } else if (event.key === 'ArrowLeft' || event.key === 'a' || event.key === 'A') {
         dir = 'a';
-    } else if (event.key === 'ArrowDown' || event.key === 's') {
+    } else if (event.key === 'ArrowDown' || event.key === 's' || event.key === 'S') {
         dir = 's';
-    } else if (event.key === 'ArrowRight' || event.key === 'd') {
+    } else if (event.key === 'ArrowRight' || event.key === 'd' || event.key === 'D') {
         dir = 'd';
     }
     if (dir) {

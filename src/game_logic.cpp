@@ -26,12 +26,12 @@ std::pair<int, int> EndGame() {
   return {0, 0};
 }
 
-int RowNum() {
+int GetRows() {
   /** implementation here **/
   return 0;
 }
 
-int ColNum() {
+int GetCols() {
   /** implementation here **/
   return 0;
 }
@@ -65,7 +65,7 @@ int Steps() {
   return 0;
 }
 
-bool ReachedTarget(int target) {
+bool HasReachedTarget(int target) {
   /** implementation here **/
   return false;
 }

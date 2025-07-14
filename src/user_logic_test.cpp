@@ -46,7 +46,7 @@ void SingleTest() {
     PrintBoard();
     */
 
-    if(ReachedTarget(2048)) {
+    if(HasReachedTarget(2048)) {
       std::cout << "You've merged an 2048 tile!\n";
       auto [steps, score] = EndGame();
       std::cout << "Steps: " << steps << "\n score: " << score << '\n';
