@@ -11,6 +11,7 @@ void SingleTest() {
   uint seed;
   std::cin >> row_num >> col_num >> seed;
 
+  ClientPrepare(row_num, col_num);
   Start(row_num, col_num, seed);
   while(true) {
 
@@ -28,7 +29,7 @@ void SingleTest() {
     std::cin.rdbuf(ibuf);                      // reset std::cin.
 
     char oper = Decide();
-    // must be a valid move. No undo allowed.
+    // must be a valid move. No undo allowed. No Steins-Gate.
     if(oper != 'w' && oper != 's' && oper != 'a' && oper != 'd') {
       std::cout << " Invalid Operation.\n";
       continue;

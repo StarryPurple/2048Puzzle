@@ -106,10 +106,10 @@ bool Stuck();
  *
  * For example: (0 for empty tiles, '>' signals the beginning of a line)
  *
- * >0    2    2    16
- * >2    4    16   4
- * >1024 8    0    4
- * >0    256  128  2
+ * >0    2    2    16  (\n here. Be careful that the last number should also be 4-digit wide.)
+ * >2    4    16   4   (\n here)
+ * >1024 8    0    4   (\n here)
+ * >0    256  128  2   (\n here)
  * >
  *
  *
@@ -132,11 +132,11 @@ bool Redo();
 // But for banning you from overwriting, we choose to define here.
 
 /**
- * @note This function is designed for debugging and testing.
- * You can use this function in your other codes.
+ * This function is designed for debugging and testing.
+ * You shall use this function in your other codes.
  * You can modify it locally, but remember the function in online judger will stick to the original version.
  *
- * @brief Randomly generate a tile according to the board.
+ * Randomly generate a tile according to the board.
  * If board is full, returns {{-1, -1}, -1}.
  * Otherwise, set the tile to that value and returns the tile position and the value.
  *

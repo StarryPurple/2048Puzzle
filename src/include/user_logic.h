@@ -8,7 +8,7 @@ namespace PZ2048 {
 /**
  * Inform the client with the board params of the game.
  */
-void Initialize(int row_num, int col_num);
+void ClientPrepare(int row_num, int col_num);
 
 /**
  * Read in the current board from stdin.

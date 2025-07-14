@@ -16,7 +16,7 @@ namespace PZ2048 {
 
 
 
-void Initialize(int row_num, int col_num) {
+void ClientPrepare(int row_num, int col_num) {
   /** implement here. **/
 }
 
