@@ -9,15 +9,16 @@ namespace PZ2048 {
 // just go ahead! You are free (and encouraged) to use them to make your code clearer and more integrated.
 // Just don't modify the signatures of existing functions.
 
-// ?? int rows, columns;
+inline int rows, cols;
 
 // You are free to add helper functions.
 
-
 void Start(int row_num, int col_num, uint game_seed) {
   srand(game_seed); // Should be the PZ2048::srand(uint).
+  rows = row_num;
+  cols = col_num;
 
-  // Modify or add essential lines as you need.
+  // You may want to add more lines.
   /** implementation here **/
 }
 
@@ -26,15 +27,9 @@ std::pair<int, int> EndGame() {
   return {0, 0};
 }
 
-int GetRows() {
-  /** implementation here **/
-  return 0;
-}
+int GetRows() { return rows; }
 
-int GetCols() {
-  /** implementation here **/
-  return 0;
-}
+int GetCols() { return cols; }
 
 bool TryRun(char dir) {
   /** implementation here **/
