@@ -1,0 +1,6 @@
+#ifndef PUZZLE_2048_COMMON_H
+#define PUZZLE_2048_COMMON_H
+
+// ...
+
+#endif // PUZZLE_2048_COMMON_H
