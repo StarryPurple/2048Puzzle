@@ -1,0 +1,939 @@
+[0] Steps: 0 Score: 0
+0    0    0    0   
+0    0    0    0   
+4    0    0    0   
+0    0    0    0   
+[1] Swiped downward. Operation succeeded.
+Steps: 1 Score: 0
+0    0    0    0   
+0    0    0    0   
+0    0    2    0   
+4    0    0    0   
+[2] Tried to undo previous operation. Operation succeeded.
+Steps: 0 Score: 0
+0    0    0    0   
+0    0    0    0   
+4    0    0    0   
+0    0    0    0   
+[3] Swiped leftward. Operation failed.
+Steps: 0 Score: 0
+0    0    0    0   
+0    0    0    0   
+4    0    0    0   
+0    0    0    0   
+[4] Tried to undo previous operation. Operation failed.
+Steps: 0 Score: 0
+0    0    0    0   
+0    0    0    0   
+4    0    0    0   
+0    0    0    0   
+[5] Swiped leftward. Operation failed.
+Steps: 0 Score: 0
+0    0    0    0   
+0    0    0    0   
+4    0    0    0   
+0    0    0    0   
+[6] Tried to undo previous operation. Operation failed.
+Steps: 0 Score: 0
+0    0    0    0   
+0    0    0    0   
+4    0    0    0   
+0    0    0    0   
+[7] Tried to undo previous operation. Operation failed.
+Steps: 0 Score: 0
+0    0    0    0   
+0    0    0    0   
+4    0    0    0   
+0    0    0    0   
+[8] Swiped downward. Operation succeeded.
+Steps: 1 Score: 0
+0    2    0    0   
+0    0    0    0   
+0    0    0    0   
+4    0    0    0   
+[9] Swiped downward. Operation succeeded.
+Steps: 2 Score: 0
+0    0    0    0   
+2    0    0    0   
+0    0    0    0   
+4    2    0    0   
+[10] Tried to undo previous operation. Operation succeeded.
+Steps: 1 Score: 0
+0    2    0    0   
+0    0    0    0   
+0    0    0    0   
+4    0    0    0   
+[11] Swiped upward. Operation succeeded.
+Steps: 2 Score: 0
+4    2    0    0   
+0    0    0    0   
+0    0    0    0   
+0    0    2    0   
+[12] Swiped downward. Operation succeeded.
+Steps: 3 Score: 0
+0    2    0    0   
+0    0    0    0   
+0    0    0    0   
+4    2    2    0   
+[13] Swiped rightward. Operation succeeded.
+Steps: 4 Score: 4
+0    0    0    2   
+0    0    0    0   
+0    0    0    0   
+0    2    4    4   
+[14] Swiped downward. Operation succeeded.
+Steps: 5 Score: 4
+0    0    0    2   
+0    0    0    0   
+0    0    0    2   
+0    2    4    4   
+[15] Tried to undo previous operation. Operation succeeded.
+Steps: 4 Score: 4
+0    0    0    2   
+0    0    0    0   
+0    0    0    0   
+0    2    4    4   
+[16] Tried to undo previous operation. Operation failed.
+Steps: 4 Score: 4
+0    0    0    2   
+0    0    0    0   
+0    0    0    0   
+0    2    4    4   
+[17] Swiped rightward. Operation succeeded.
+Steps: 5 Score: 12
+2    0    0    2   
+0    0    0    0   
+0    0    0    0   
+0    0    2    8   
+[18] Swiped rightward. Operation succeeded.
+Steps: 6 Score: 16
+0    0    0    4   
+0    0    0    0   
+0    0    0    0   
+0    2    2    8   
+[19] Tried to undo previous operation. Operation succeeded.
+Steps: 5 Score: 16
+2    0    0    2   
+0    0    0    0   
+0    0    0    0   
+0    0    2    8   
+[20] Swiped upward. Operation succeeded.
+Steps: 6 Score: 16
+2    0    2    2   
+0    0    0    8   
+2    0    0    0   
+0    0    0    0   
+[21] Swiped upward. Operation succeeded.
+Steps: 7 Score: 20
+4    0    2    2   
+0    0    0    8   
+0    0    0    0   
+2    0    0    0   
+[22] Swiped downward. Operation succeeded.
+Steps: 8 Score: 20
+0    0    0    0   
+0    0    0    2   
+4    0    0    2   
+2    0    2    8   
+[23] Swiped rightward. Operation succeeded.
+Steps: 9 Score: 24
+0    0    0    0   
+0    0    0    2   
+0    0    4    2   
+2    0    4    8   
+[24] Swiped rightward. Operation succeeded.
+Steps: 10 Score: 24
+0    0    0    2   
+0    0    0    2   
+0    0    4    2   
+0    2    4    8   
+[25] Swiped rightward. Operation failed.
+Steps: 10 Score: 24
+0    0    0    2   
+0    0    0    2   
+0    0    4    2   
+0    2    4    8   
+[26] Swiped rightward. Operation failed.
+Steps: 10 Score: 24
+0    0    0    2   
+0    0    0    2   
+0    0    4    2   
+0    2    4    8   
+[27] Swiped downward. Operation succeeded.
+Steps: 11 Score: 36
+0    0    0    0   
+0    2    0    2   
+0    0    0    4   
+0    2    8    8   
+[28] Swiped rightward. Operation succeeded.
+Steps: 12 Score: 56
+0    0    0    0   
+0    0    0    4   
+0    0    0    4   
+2    0    2    16  
+[29] Tried to undo previous operation. Operation succeeded.
+Steps: 11 Score: 40
+0    0    0    0   
+0    2    0    2   
+0    0    0    4   
+0    2    8    8   
+[30] Swiped upward. Operation succeeded.
+Steps: 12 Score: 44
+0    4    8    2   
+0    0    0    4   
+0    0    0    8   
+0    0    2    0   
+[31] Swiped leftward. Operation succeeded.
+Steps: 13 Score: 44
+4    8    2    0   
+4    0    0    0   
+8    0    0    0   
+2    0    2    0   
+[32] Swiped leftward. Operation succeeded.
+Steps: 14 Score: 48
+4    8    2    0   
+4    0    0    2   
+8    0    0    0   
+4    0    0    0   
+[33] Swiped leftward. Operation succeeded.
+Steps: 15 Score: 48
+4    8    2    0   
+4    2    0    0   
+8    0    0    0   
+4    0    2    0   
+[34] Tried to undo previous operation. Operation succeeded.
+Steps: 14 Score: 48
+4    8    2    0   
+4    0    0    2   
+8    0    0    0   
+4    0    0    0   
+[35] Swiped upward. Operation succeeded.
+Steps: 15 Score: 56
+8    8    2    2   
+8    0    0    0   
+4    0    0    0   
+0    2    0    0   
+[36] Swiped leftward. Operation succeeded.
+Steps: 16 Score: 76
+16   4    0    0   
+8    2    0    0   
+4    0    0    0   
+2    0    0    0   
+[37] Swiped rightward. Operation succeeded.
+Steps: 17 Score: 76
+0    0    16   4   
+0    2    8    2   
+0    0    0    4   
+0    0    0    2   
+[38] Swiped downward. Operation succeeded.
+Steps: 18 Score: 76
+0    0    0    4   
+2    0    0    2   
+0    0    16   4   
+0    2    8    2   
+[39] Swiped rightward. Operation succeeded.
+Steps: 19 Score: 80
+0    2    0    4   
+0    0    0    4   
+0    0    16   4   
+0    2    8    2   
+[40] Swiped upward. Operation succeeded.
+Steps: 20 Score: 92
+0    4    16   8   
+0    0    8    4   
+0    0    0    2   
+0    0    0    2   
+[41] Swiped downward. Operation succeeded.
+Steps: 21 Score: 96
+0    0    0    0   
+0    0    2    8   
+0    0    16   4   
+0    4    8    4   
+[42] Swiped upward. Operation succeeded.
+Steps: 22 Score: 104
+0    4    2    8   
+0    0    16   8   
+0    4    8    0   
+0    0    0    0   
+[43] Tried to undo previous operation. Operation succeeded.
+Steps: 21 Score: 96
+0    0    0    0   
+0    0    2    8   
+0    0    16   4   
+0    4    8    4   
+[44] Swiped upward. Operation succeeded.
+Steps: 22 Score: 104
+0    4    2    8   
+0    0    16   8   
+2    0    8    0   
+0    0    0    0   
+[45] Swiped downward. Operation succeeded.
+Steps: 23 Score: 120
+0    0    0    0   
+0    0    2    0   
+0    2    16   0   
+2    4    8    16  
+[46] Swiped upward. Operation succeeded.
+Steps: 24 Score: 120
+2    2    2    16  
+0    4    16   0   
+0    0    8    0   
+0    0    0    2   
+[47] Swiped leftward. Operation succeeded.
+Steps: 25 Score: 124
+4    2    16   0   
+4    16   0    0   
+8    0    0    0   
+2    0    2    0   
+[48] Tried to undo previous operation. Operation succeeded.
+Steps: 24 Score: 124
+2    2    2    16  
+0    4    16   0   
+0    0    8    0   
+0    0    0    2   
+[49] Swiped upward. Operation succeeded.
+Steps: 25 Score: 124
+2    2    2    16  
+2    4    16   2   
+0    0    8    0   
+0    0    0    0   
+[50] Swiped upward. Operation succeeded.
+Steps: 26 Score: 128
+4    2    2    16  
+2    4    16   2   
+0    0    8    0   
+0    0    0    0   
+[51] Swiped rightward. Operation succeeded.
+Steps: 27 Score: 132
+0    4    4    16  
+2    4    16   2   
+0    2    0    8   
+0    0    0    0   
+[52] Tried to undo previous operation. Operation succeeded.
+Steps: 26 Score: 132
+4    2    2    16  
+2    4    16   2   
+0    0    8    0   
+0    0    0    0   
+[53] Swiped leftward. Operation succeeded.
+Steps: 27 Score: 136
+4    4    16   0   
+2    4    16   2   
+8    0    0    0   
+0    0    2    0   
+[54] Swiped downward. Operation succeeded.
+Steps: 28 Score: 176
+0    0    0    0   
+4    0    2    0   
+2    0    32   0   
+8    8    2    2   
+[55] Swiped upward. Operation succeeded.
+Steps: 29 Score: 176
+4    8    2    2   
+2    0    32   0   
+8    0    2    0   
+0    0    0    2   
+[56] Swiped rightward. Operation succeeded.
+Steps: 30 Score: 180
+2    4    8    4   
+0    0    2    32  
+0    0    8    2   
+0    0    0    2   
+[57] Swiped rightward. Operation failed.
+Steps: 30 Score: 180
+2    4    8    4   
+0    0    2    32  
+0    0    8    2   
+0    0    0    2   
+[58] Swiped downward. Operation succeeded.
+Steps: 31 Score: 184
+0    0    0    0   
+2    0    8    4   
+0    0    2    32  
+2    4    8    4   
+[59] Swiped upward. Operation succeeded.
+Steps: 32 Score: 188
+4    4    8    4   
+0    0    2    32  
+2    0    8    4   
+0    0    0    0   
+[60] Swiped rightward. Operation succeeded.
+Steps: 33 Score: 196
+0    8    8    4   
+0    0    2    32  
+0    2    8    4   
+2    0    0    0   
+[61] Swiped rightward. Operation succeeded.
+Steps: 34 Score: 212
+0    0    16   4   
+0    0    2    32  
+2    2    8    4   
+0    0    0    2   
+[62] Swiped leftward. Operation succeeded.
+Steps: 35 Score: 216
+16   4    2    0   
+2    32   0    0   
+4    8    4    0   
+2    0    0    0   
+[63] Swiped upward. Operation succeeded.
+Steps: 36 Score: 216
+16   4    2    0   
+2    32   4    2   
+4    8    0    0   
+2    0    0    0   
+[64] Swiped leftward. Operation failed.
+Steps: 36 Score: 216
+16   4    2    0   
+2    32   4    2   
+4    8    0    0   
+2    0    0    0   
+[65] Swiped upward. Operation succeeded.
+Steps: 37 Score: 216
+16   4    2    2   
+2    32   4    0   
+4    8    2    0   
+2    0    0    0   
+[66] Swiped upward. Operation failed.
+Steps: 37 Score: 216
+16   4    2    2   
+2    32   4    0   
+4    8    2    0   
+2    0    0    0   
+[67] Tried to undo previous operation. Operation succeeded.
+Steps: 36 Score: 216
+16   4    2    0   
+2    32   4    2   
+4    8    0    0   
+2    0    0    0   
+[68] Tried to undo previous operation. Operation failed.
+Steps: 36 Score: 216
+16   4    2    0   
+2    32   4    2   
+4    8    0    0   
+2    0    0    0   
+[69] Swiped upward. Operation succeeded.
+Steps: 37 Score: 216
+16   4    2    2   
+2    32   4    0   
+4    8    0    0   
+2    0    2    0   
+[70] Swiped leftward. Operation succeeded.
+Steps: 38 Score: 224
+16   4    4    0   
+2    32   4    0   
+4    8    0    0   
+4    0    0    2   
+[71] Tried to undo previous operation. Operation succeeded.
+Steps: 37 Score: 220
+16   4    2    2   
+2    32   4    0   
+4    8    0    0   
+2    0    2    0   
+[72] Swiped rightward. Operation succeeded.
+Steps: 38 Score: 228
+0    16   4    4   
+0    2    32   4   
+2    0    4    8   
+0    0    0    4   
+[73] Swiped upward. Operation succeeded.
+Steps: 39 Score: 236
+2    16   4    8   
+0    2    32   8   
+0    0    4    4   
+0    0    2    0   
+[74] Swiped rightward. Operation succeeded.
+Steps: 40 Score: 244
+2    16   4    8   
+0    2    32   8   
+0    0    0    8   
+0    0    2    2   
+[75] Swiped downward. Operation succeeded.
+Steps: 41 Score: 260
+0    0    4    0   
+0    0    4    8   
+0    16   32   16  
+2    2    2    2   
+[76] Swiped leftward. Operation succeeded.
+Steps: 42 Score: 268
+4    0    2    0   
+4    8    0    0   
+16   32   16   0   
+4    4    0    0   
+[77] Swiped rightward. Operation succeeded.
+Steps: 43 Score: 276
+0    0    4    2   
+0    0    4    8   
+0    16   32   16  
+0    2    0    8   
+[78] Tried to undo previous operation. Operation succeeded.
+Steps: 42 Score: 268
+4    0    2    0   
+4    8    0    0   
+16   32   16   0   
+4    4    0    0   
+[79] Swiped leftward. Operation succeeded.
+Steps: 43 Score: 276
+4    2    0    2   
+4    8    0    0   
+16   32   16   0   
+8    0    0    0   
+[80] Swiped leftward. Operation succeeded.
+Steps: 44 Score: 280
+4    4    0    2   
+4    8    0    0   
+16   32   16   0   
+8    0    0    0   
+[81] Swiped downward. Operation succeeded.
+Steps: 45 Score: 288
+2    0    0    0   
+8    4    0    0   
+16   8    0    0   
+8    32   16   2   
+[82] Tried to undo previous operation. Operation succeeded.
+Steps: 44 Score: 288
+4    4    0    2   
+4    8    0    0   
+16   32   16   0   
+8    0    0    0   
+[83] Swiped downward. Operation succeeded.
+Steps: 45 Score: 296
+0    0    2    0   
+8    4    0    0   
+16   8    0    0   
+8    32   16   2   
+[84] Swiped rightward. Operation succeeded.
+Steps: 46 Score: 296
+0    0    0    2   
+0    2    8    4   
+0    0    16   8   
+8    32   16   2   
+[85] Swiped upward. Operation succeeded.
+Steps: 47 Score: 328
+8    2    8    2   
+0    32   32   4   
+2    0    0    8   
+0    0    0    2   
+[86] Tried to undo previous operation. Operation succeeded.
+Steps: 46 Score: 296
+0    0    0    2   
+0    2    8    4   
+0    0    16   8   
+8    32   16   2   
+[87] Swiped rightward. Operation failed.
+Steps: 46 Score: 296
+0    0    0    2   
+0    2    8    4   
+0    0    16   8   
+8    32   16   2   
+[88] Swiped upward. Operation succeeded.
+Steps: 47 Score: 328
+8    2    8    2   
+0    32   32   4   
+0    0    0    8   
+4    0    0    2   
+[89] Swiped downward. Operation succeeded.
+Steps: 48 Score: 328
+0    0    0    2   
+0    0    2    4   
+8    2    8    8   
+4    32   32   2   
+[90] Swiped rightward. Operation succeeded.
+Steps: 49 Score: 408
+0    0    0    2   
+0    0    2    4   
+2    8    2    16  
+0    4    64   2   
+[91] Swiped downward. Operation succeeded.
+Steps: 50 Score: 412
+0    0    0    2   
+0    2    0    4   
+0    8    4    16  
+2    4    64   2   
+[92] Swiped rightward. Operation succeeded.
+Steps: 51 Score: 412
+0    0    0    2   
+0    2    2    4   
+0    8    4    16  
+2    4    64   2   
+[93] Tried to undo previous operation. Operation succeeded.
+Steps: 50 Score: 412
+0    0    0    2   
+0    2    0    4   
+0    8    4    16  
+2    4    64   2   
+[94] Swiped leftward. Operation succeeded.
+Steps: 51 Score: 412
+2    2    0    0   
+2    4    0    0   
+8    4    16   0   
+2    4    64   2   
+[95] Swiped leftward. Operation succeeded.
+Steps: 52 Score: 416
+4    0    0    0   
+2    4    0    2   
+8    4    16   0   
+2    4    64   2   
+[96] Swiped leftward. Operation succeeded.
+Steps: 53 Score: 416
+4    0    0    2   
+2    4    2    0   
+8    4    16   0   
+2    4    64   2   
+[97] Swiped upward. Operation succeeded.
+Steps: 54 Score: 428
+4    8    2    4   
+2    4    16   0   
+8    0    64   0   
+2    0    0    2   
+[98] Tried to undo previous operation. Operation succeeded.
+Steps: 53 Score: 424
+4    0    0    2   
+2    4    2    0   
+8    4    16   0   
+2    4    64   2   
+[99] Swiped downward. Operation succeeded.
+Steps: 54 Score: 436
+4    2    0    0   
+2    0    2    0   
+8    4    16   0   
+2    8    64   4   
+[100] Swiped rightward. Operation succeeded.
+Steps: 55 Score: 440
+0    0    4    2   
+0    0    0    4   
+2    8    4    16  
+2    8    64   4   
+[101] Swiped downward. Operation succeeded.
+Steps: 56 Score: 468
+0    2    0    2   
+0    0    0    4   
+0    0    8    16  
+4    16   64   4   
+[102] Swiped downward. Operation succeeded.
+Steps: 57 Score: 468
+2    0    0    2   
+0    0    0    4   
+0    2    8    16  
+4    16   64   4   
+[103] Swiped downward. Operation succeeded.
+Steps: 58 Score: 468
+0    2    0    2   
+0    0    0    4   
+2    2    8    16  
+4    16   64   4   
+[104] Swiped leftward. Operation succeeded.
+Steps: 59 Score: 476
+4    0    2    0   
+4    0    0    0   
+4    8    16   0   
+4    16   64   4   
+[105] Swiped leftward. Operation succeeded.
+Steps: 60 Score: 476
+4    2    0    2   
+4    0    0    0   
+4    8    16   0   
+4    16   64   4   
+[106] Swiped rightward. Operation succeeded.
+Steps: 61 Score: 480
+2    0    4    4   
+0    0    0    4   
+0    4    8    16  
+4    16   64   4   
+[107] Tried to undo previous operation. Operation succeeded.
+Steps: 60 Score: 480
+4    2    0    2   
+4    0    0    0   
+4    8    16   0   
+4    16   64   4   
+[108] Swiped downward. Operation succeeded.
+Steps: 61 Score: 496
+0    0    0    0   
+4    2    0    0   
+8    8    16   2   
+8    16   64   4   
+[109] Swiped upward. Operation succeeded.
+Steps: 62 Score: 512
+4    2    16   2   
+16   8    64   4   
+0    16   0    0   
+0    2    0    0   
+[110] Swiped downward. Operation succeeded.
+Steps: 63 Score: 512
+0    2    0    0   
+2    8    0    0   
+4    16   16   2   
+16   2    64   4   
+[111] Swiped upward. Operation succeeded.
+Steps: 64 Score: 512
+2    2    16   2   
+4    8    64   4   
+16   16   0    0   
+0    2    2    0   
+[112] Swiped upward. Operation succeeded.
+Steps: 65 Score: 512
+2    2    16   2   
+4    8    64   4   
+16   16   2    0   
+2    2    0    0   
+[113] Swiped upward. Operation failed.
+Steps: 65 Score: 512
+2    2    16   2   
+4    8    64   4   
+16   16   2    0   
+2    2    0    0   
+[114] Tried to undo previous operation. Operation succeeded.
+Steps: 64 Score: 512
+2    2    16   2   
+4    8    64   4   
+16   16   0    0   
+0    2    2    0   
+[115] Swiped downward. Operation succeeded.
+Steps: 65 Score: 512
+2    2    0    0   
+2    8    16   0   
+4    16   64   2   
+16   2    2    4   
+[116] Swiped downward. Operation succeeded.
+Steps: 66 Score: 516
+0    2    0    0   
+4    8    16   2   
+4    16   64   2   
+16   2    2    4   
+[117] Swiped leftward. Operation succeeded.
+Steps: 67 Score: 520
+2    0    4    0   
+4    8    16   2   
+4    16   64   2   
+16   4    4    0   
+[118] Tried to undo previous operation. Operation succeeded.
+Steps: 66 Score: 516
+0    2    0    0   
+4    8    16   2   
+4    16   64   2   
+16   2    2    4   
+[119] Tried to undo previous operation. Operation failed.
+Steps: 66 Score: 516
+0    2    0    0   
+4    8    16   2   
+4    16   64   2   
+16   2    2    4   
+[120] Tried to undo previous operation. Operation failed.
+Steps: 66 Score: 516
+0    2    0    0   
+4    8    16   2   
+4    16   64   2   
+16   2    2    4   
+[121] Tried to undo previous operation. Operation failed.
+Steps: 66 Score: 516
+0    2    0    0   
+4    8    16   2   
+4    16   64   2   
+16   2    2    4   
+[122] Swiped leftward. Operation succeeded.
+Steps: 67 Score: 520
+2    0    0    2   
+4    8    16   2   
+4    16   64   2   
+16   4    4    0   
+[123] Swiped rightward. Operation succeeded.
+Steps: 68 Score: 532
+0    4    0    4   
+4    8    16   2   
+4    16   64   2   
+0    0    16   8   
+[124] Swiped downward. Operation succeeded.
+Steps: 69 Score: 544
+2    0    0    0   
+0    4    16   4   
+0    8    64   4   
+8    16   16   8   
+[125] Swiped downward. Operation succeeded.
+Steps: 70 Score: 552
+0    2    0    0   
+0    4    16   0   
+2    8    64   8   
+8    16   16   8   
+[126] Swiped downward. Operation succeeded.
+Steps: 71 Score: 568
+0    2    0    2   
+0    4    16   0   
+2    8    64   0   
+8    16   16   16  
+[127] Tried to undo previous operation. Operation succeeded.
+Steps: 70 Score: 568
+0    2    0    0   
+0    4    16   0   
+2    8    64   8   
+8    16   16   8   
+[128] Swiped leftward. Operation succeeded.
+Steps: 71 Score: 600
+2    0    2    0   
+4    16   0    0   
+2    8    64   8   
+8    32   8    0   
+[129] Swiped upward. Operation succeeded.
+Steps: 72 Score: 600
+2    16   2    8   
+4    8    64   2   
+2    32   8    0   
+8    0    0    0   
+[130] Swiped downward. Operation succeeded.
+Steps: 73 Score: 600
+2    0    2    0   
+4    16   2    0   
+2    8    64   8   
+8    32   8    2   
+[131] Tried to undo previous operation. Operation succeeded.
+Steps: 72 Score: 600
+2    16   2    8   
+4    8    64   2   
+2    32   8    0   
+8    0    0    0   
+[132] Tried to undo previous operation. Operation failed.
+Steps: 72 Score: 600
+2    16   2    8   
+4    8    64   2   
+2    32   8    0   
+8    0    0    0   
+[133] Swiped leftward. Operation failed.
+Steps: 72 Score: 600
+2    16   2    8   
+4    8    64   2   
+2    32   8    0   
+8    0    0    0   
+[134] Swiped rightward. Operation succeeded.
+Steps: 73 Score: 600
+2    16   2    8   
+4    8    64   2   
+0    2    32   8   
+2    0    0    8   
+[135] Swiped downward. Operation succeeded.
+Steps: 74 Score: 616
+0    0    0    4   
+2    16   2    8   
+4    8    64   2   
+2    2    32   16  
+[136] Swiped downward. Operation failed.
+Steps: 74 Score: 616
+0    0    0    4   
+2    16   2    8   
+4    8    64   2   
+2    2    32   16  
+[137] Swiped upward. Operation succeeded.
+Steps: 75 Score: 616
+2    16   2    4   
+4    8    64   8   
+2    2    32   2   
+0    0    2    16  
+[138] Swiped leftward. Operation succeeded.
+Steps: 76 Score: 620
+2    16   2    4   
+4    8    64   8   
+4    32   2    0   
+2    16   0    2   
+[139] Swiped rightward. Operation succeeded.
+Steps: 77 Score: 620
+2    16   2    4   
+4    8    64   8   
+2    4    32   2   
+0    2    16   2   
+[140] Swiped leftward. Operation succeeded.
+Steps: 78 Score: 620
+2    16   2    4   
+4    8    64   8   
+2    4    32   2   
+2    16   2    2   
+[141] Swiped upward. Operation succeeded.
+Steps: 79 Score: 628
+2    16   2    4   
+4    8    64   8   
+4    4    32   4   
+2    16   2    0   
+[142] Swiped downward. Operation succeeded.
+Steps: 80 Score: 636
+2    16   2    0   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+[143] Swiped leftward. Operation failed.
+Steps: 80 Score: 636
+2    16   2    0   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+[144] Swiped leftward. Operation failed.
+Steps: 80 Score: 636
+2    16   2    0   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+[145] Swiped upward. Operation succeeded.
+Steps: 81 Score: 640
+4    16   2    4   
+8    8    64   8   
+2    4    32   4   
+0    16   2    2   
+[146] Tried to undo previous operation. Operation succeeded.
+Steps: 80 Score: 640
+2    16   2    0   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+[147] Swiped rightward. Operation succeeded.
+Steps: 81 Score: 640
+2    2    16   2   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+[148] Swiped rightward. Operation succeeded.
+Steps: 82 Score: 644
+4    4    16   2   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+[149] Swiped downward. Operation failed.
+Steps: 82 Score: 644
+4    4    16   2   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+[150] Swiped leftward. Operation succeeded.
+Steps: 83 Score: 652
+8    16   2    2   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+[151] Swiped upward. Operation failed.
+Steps: 83 Score: 652
+8    16   2    2   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+[152] Swiped upward. Operation failed.
+Steps: 83 Score: 652
+8    16   2    2   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+[153] Swiped upward. Operation failed.
+Steps: 83 Score: 652
+8    16   2    2   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+[154] Swiped upward. Operation failed.
+Steps: 83 Score: 652
+8    16   2    2   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+[155] Swiped leftward. Operation succeeded.
+Steps: 84 Score: 656
+8    16   4    2   
+2    8    64   4   
+8    4    32   8   
+2    16   2    4   
+You've stuck.
+Game ended.
+Steps: 84
+Score: 656

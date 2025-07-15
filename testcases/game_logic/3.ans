@@ -1,0 +1,48 @@
+[0] Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[1] Swiped leftward. Operation succeeded.
+Steps: 1 Score: 0
+0    0    0   
+2    0    0   
+2    0    0   
+[2] Swiped downward. Operation succeeded.
+Steps: 2 Score: 4
+0    0    0   
+0    0    2   
+4    0    0   
+[3] Swiped upward. Operation succeeded.
+Steps: 3 Score: 4
+4    0    2   
+2    0    0   
+0    0    0   
+[4] Swiped rightward. Operation succeeded.
+Steps: 4 Score: 4
+0    4    2   
+0    0    2   
+0    2    0   
+[5] Swiped rightward. Operation succeeded.
+Steps: 5 Score: 4
+0    4    2   
+0    0    2   
+0    2    2   
+[6] Swiped leftward. Operation succeeded.
+Steps: 6 Score: 8
+4    2    0   
+2    2    0   
+4    0    0   
+[7] Swiped rightward. Operation succeeded.
+Steps: 7 Score: 12
+0    4    2   
+2    0    4   
+0    0    4   
+[8] Swiped upward. Operation succeeded.
+Steps: 8 Score: 20
+2    4    2   
+0    0    8   
+0    2    0   
+You've merged a 8 tile!
+Game ended.
+Steps: 8
+Score: 20

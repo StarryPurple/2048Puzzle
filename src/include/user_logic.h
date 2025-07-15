@@ -3,8 +3,6 @@
 
 namespace PZ2048 {
 
-// Don't try to use extern variables from server.cpp.
-
 /**
  * Inform the client with the board params of the game.
  */
@@ -20,6 +18,7 @@ void ReadBoard();
 
 /**
  * Using the board status you've read with ReadBoard(), decide your next move.
+ * Undo is considered invalid, preventing from randomness.
  * @return a character among 'w', 's', 'a' and 'd'.
  */
 char Decide();

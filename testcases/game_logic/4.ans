@@ -1,0 +1,168 @@
+[0] Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[1] Tried to undo previous operation. Operation failed.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[2] Swiped leftward. Operation succeeded.
+Steps: 1 Score: 0
+0    0    0   
+2    0    0   
+2    0    0   
+[3] Tried to undo previous operation. Operation succeeded.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[4] Tried to undo previous operation. Operation failed.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[5] Swiped downward. Operation failed.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[6] Tried to undo previous operation. Operation failed.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[7] Swiped upward. Operation succeeded.
+Steps: 1 Score: 0
+0    2    0   
+0    0    0   
+2    0    0   
+[8] Tried to undo previous operation. Operation succeeded.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[9] Tried to undo previous operation. Operation failed.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[10] Tried to undo previous operation. Operation failed.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[11] Swiped rightward. Operation succeeded.
+Steps: 1 Score: 0
+0    0    0   
+0    0    0   
+0    2    2   
+[12] Tried to undo previous operation. Operation succeeded.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[13] Tried to undo previous operation. Operation failed.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[14] Swiped rightward. Operation succeeded.
+Steps: 1 Score: 0
+0    0    2   
+0    0    0   
+0    0    2   
+[15] Tried to undo previous operation. Operation succeeded.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[16] Swiped leftward. Operation succeeded.
+Steps: 1 Score: 0
+0    0    0   
+0    0    0   
+2    2    0   
+[17] Tried to undo previous operation. Operation succeeded.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[18] Swiped rightward. Operation succeeded.
+Steps: 1 Score: 0
+2    0    0   
+0    0    0   
+0    0    2   
+[19] Tried to undo previous operation. Operation succeeded.
+Steps: 0 Score: 0
+0    0    0   
+0    0    0   
+0    2    0   
+[20] Swiped upward. Operation succeeded.
+Steps: 1 Score: 0
+2    2    0   
+0    0    0   
+0    0    0   
+[21] Swiped leftward. Operation succeeded.
+Steps: 2 Score: 4
+4    0    2   
+0    0    0   
+0    0    0   
+[22] Tried to undo previous operation. Operation succeeded.
+Steps: 1 Score: 4
+2    2    0   
+0    0    0   
+0    0    0   
+[23] Tried to undo previous operation. Operation failed.
+Steps: 1 Score: 4
+2    2    0   
+0    0    0   
+0    0    0   
+[24] Swiped leftward. Operation succeeded.
+Steps: 2 Score: 8
+4    0    2   
+0    0    0   
+0    0    0   
+[25] Swiped rightward. Operation succeeded.
+Steps: 3 Score: 8
+0    4    2   
+2    0    0   
+0    0    0   
+[26] Tried to undo previous operation. Operation succeeded.
+Steps: 2 Score: 8
+4    0    2   
+0    0    0   
+0    0    0   
+[27] Swiped downward. Operation succeeded.
+Steps: 3 Score: 8
+0    0    0   
+0    4    0   
+4    0    2   
+[28] Swiped leftward. Operation succeeded.
+Steps: 4 Score: 8
+0    0    2   
+4    0    0   
+4    2    0   
+[29] Tried to undo previous operation. Operation succeeded.
+Steps: 3 Score: 8
+0    0    0   
+0    4    0   
+4    0    2   
+[30] Swiped rightward. Operation succeeded.
+Steps: 4 Score: 8
+0    0    4   
+0    0    4   
+0    4    2   
+[31] Swiped leftward. Operation succeeded.
+Steps: 5 Score: 8
+4    0    0   
+4    2    0   
+4    2    0   
+[32] Swiped upward. Operation succeeded.
+Steps: 6 Score: 20
+8    4    0   
+4    2    0   
+0    0    0   
+You've merged a 8 tile!
+Game ended.
+Steps: 6
+Score: 20

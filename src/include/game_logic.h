@@ -88,7 +88,7 @@ int Steps();
 /**
  * @return whether the largest number on the board reaches the given value.
  */
-bool HasReachedTarget(int target = 2048);
+bool HasReachedTarget(int target);
 
 /**
  * @return whether no valid operation can be performed.
@@ -106,11 +106,12 @@ bool Stuck();
  *
  * For example: (0 for empty tiles, '>' signals the beginning of a line)
  *
- * >0    2    2    16  (\n here. Be careful that the last number should also be 4-digit wide.)
+ * >0    2    2    16  (\n here)
  * >2    4    16   4   (\n here)
  * >1024 8    0    4   (\n here)
  * >0    256  128  2   (\n here)
  * >
+ * (Since endline spaces are filtered, reserving them is optional.)
  *
  *
  * Hint: std::setw(int), std::left

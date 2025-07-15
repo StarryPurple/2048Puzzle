@@ -1,0 +1,39 @@
+[0] Steps: 0 Score: 0
+0    0   
+2    0   
+[1] Swiped leftward. Operation failed.
+Steps: 0 Score: 0
+0    0   
+2    0   
+[2] Swiped leftward. Operation failed.
+Steps: 0 Score: 0
+0    0   
+2    0   
+[3] Swiped downward. Operation failed.
+Steps: 0 Score: 0
+0    0   
+2    0   
+[4] Swiped rightward. Operation succeeded.
+Steps: 1 Score: 0
+0    0   
+2    2   
+[5] Swiped upward. Operation succeeded.
+Steps: 2 Score: 0
+2    2   
+0    2   
+[6] Swiped downward. Operation succeeded.
+Steps: 3 Score: 4
+0    2   
+2    4   
+[7] Swiped upward. Operation succeeded.
+Steps: 4 Score: 4
+2    2   
+2    4   
+[8] Swiped leftward. Operation succeeded.
+Steps: 5 Score: 8
+4    2   
+2    4   
+You've stuck.
+Game ended.
+Steps: 5
+Score: 8

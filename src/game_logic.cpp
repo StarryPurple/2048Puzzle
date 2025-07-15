@@ -13,6 +13,9 @@ namespace PZ2048 {
 // Or... can you?
 // Just don't modify the signatures of existing functions.
 
+// Don't try to use extern variables from user_logic.cpp. You're not supposed to communicate through this way.
+// After all, the game logic on the online judger won't contain extern variables same as yours.
+
 inline int rows, cols, steps, score, prev_steps, prev_score;
 inline std::vector<std::vector<int>> board, prev_board;
 inline bool prev_valid;

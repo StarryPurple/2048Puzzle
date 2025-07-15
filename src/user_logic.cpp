@@ -14,7 +14,8 @@ namespace PZ2048 {
 
 // You are free to add helper functions.
 
-
+// Don't try to use extern variables from game_logic.cpp. You're not supposed to communicate through this way.
+// After all, the game logic on the online judger won't contain extern variables same as yours.
 
 void ClientPrepare(int row_num, int col_num) {
   /** implement here. **/
