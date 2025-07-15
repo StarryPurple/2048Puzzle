@@ -10,9 +10,9 @@ void check_target(int &target) {
     std::cout << "Target too low. Automatically changed target to 8.\n";
     return;
   }
-  if(target > 2048) {
-    target = 2048;
-    std::cout << "Target too large. Automatically changed target to 2048.\n";
+  if(target > 8192) {
+    target = 8192;
+    std::cout << "Target too large. Automatically changed target to 8192.\n";
     return;
   }
   int cnt = 0, tmp = target;
