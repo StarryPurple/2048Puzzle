@@ -171,15 +171,15 @@ int main() {
         std::string about_content =
             "Welcome to the C++ 2048 Game!\n\n"
             "This is a simple backend implementation using the Crow C++ web framework with the help of Google Gemini.\n"
-            "You can play the classic 2048 game, customize board dimensions, set a target tile, and even play with a fixed random seed to reproduce specific game scenarios.\n\n"
+            // "You can play the classic 2048 game, customize board dimensions, set a target tile, and even play with a fixed random seed to reproduce specific game scenarios.\n\n"
             "How to Play:\n"
-            "- Use 'w', 'a', 's', 'd' to move tiles Up, Left, Down, or Right respectively.\n"
             "- Two tiles with the same number merge into one tile with the sum of their values.\n"
             "- The goal is to reach the target tile (default 2048) by combining tiles.\n\n"
             "Customization Options:\n"
             "- Board Dimensions: Choose rows and columns (1-10).\n"
             "- Target Tile: Set your winning tile (e.g., 1024, 4096, 8192). The dropdown ensures valid power-of-2 numbers.\n"
-            "- Game Seed: Enter an integer to play a fixed game, or select 'Random Seed' for a new challenge.\n\n"
+            "- Game Seed: Enter an integer to play a fixed game, or select 'Random Seed' for a new challenge.\n"
+            "- Keyboard Simulation: Input a control sequence, choose the execution speed and hit the button. The sequence will be executed, just as if you were typing then.\n\n"
             "Enjoy the game!";
 
         crow::response res(200, about_content);

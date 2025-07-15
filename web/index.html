@@ -26,8 +26,8 @@
         #game-info {
             display: flex;
             width: 320px;
-            justify-content: flex-end;
-            align-items: flex-start;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 20px;
             gap: 10px;
         }
@@ -227,10 +227,74 @@
             color: #776e65;
             border: 1px solid #bbada0;
         }
+
+        /* Styles for sequence input */
+        #sequence-control-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            border-top: 1px solid #ccc;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        #sequenceInput {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #bbada0;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #776e65;
+            background-color: #f9f6f2;
+            box-sizing: border-box;
+        }
+
+        #playSequenceButton {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #8f7a66;
+            color: #f9f6f2;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #playSequenceButton:hover {
+            background-color: #998877;
+        }
+
+        #delay-control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        #delay-control-group input[type="number"] {
+            width: 60px;
+            text-align: center;
+        }
+        #about-control-group {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-<h1>2048</h1>
+<h1><span id="headerTargetDisplay">2048</span> Puzzle</h1>
 
 <div id="game-info">
     <div class="score-container">
@@ -277,7 +341,6 @@
                 }
             </script>
         </select>
-        <button id="initButton">New Game</button>
     </div>
 
     <div class="control-group">
@@ -305,7 +368,7 @@
     </div>
 
     <div class="control-group">
-        <button id="aboutButton">About This Game</button>
+        <button id="initButton">New Game</button>
     </div>
 
     <div class="control-group" style="font-size: 14px; margin-top: 5px;">
@@ -314,9 +377,25 @@
     </div>
 </div>
 
+<div id="sequence-control-group">
+    <input type="text" id="sequenceInput" placeholder="Enter wsadz sequence (e.g., wwssdaz)">
+    <div id="delay-control-group">
+        <label for="sequenceDelayInput">Step Delay (ms):</label>
+        <input type="number" id="sequenceDelayInput" value="200" min="50">
+    </div>
+    <button id="playSequenceButton">Play Sequence</button>
+</div>
+
+<div id="about-control-group">
+    <div class="control-group">
+        <button id="aboutButton">About This Game</button>
+    </div>
+</div>
+
 <div id="aboutContent"></div>
 
 <script>
+    const headerTargetDisplay = document.getElementById('headerTargetDisplay');
     const rowsSelect = document.getElementById('rowsSelect');
     const colsSelect = document.getElementById('colsSelect');
     const targetTileSelect = document.getElementById('targetTileSelect');
@@ -331,6 +410,10 @@
     const dirRightButton = document.getElementById('dir-right');
     const dirDownButton = document.getElementById('dir-down');
 
+    const sequenceInput = document.getElementById('sequenceInput');
+    const playSequenceButton = document.getElementById('playSequenceButton');
+    const sequenceDelayInput = document.getElementById('sequenceDelayInput'); // New
+
     const gameBoardDiv = document.getElementById('gameBoard');
     const scoreDisplay = document.getElementById('scoreDisplay');
     const stepsDisplay = document.getElementById('stepsDisplay');
@@ -342,6 +425,7 @@
 
     let currentRows = 4;
     let currentCols = 4;
+    let isPlayingSequence = false; // New flag to prevent concurrent playback issues
 
     randomSeedCheckbox.addEventListener('change', () => {
         seedInput.disabled = randomSeedCheckbox.checked;
@@ -360,9 +444,16 @@
     dirRightButton.addEventListener('click', () => sendMove('d'));
     dirDownButton.addEventListener('click', () => sendMove('s'));
 
+    playSequenceButton.addEventListener('click', playSequence);
+
     document.addEventListener('keydown', handleKeyPress);
 
     async function initGame() {
+        if (isPlayingSequence) {
+            messageDiv.textContent = "Cannot start new game while sequence is playing.";
+            return;
+        }
+
         const rows = parseInt(rowsSelect.value);
         const cols = parseInt(colsSelect.value);
         const targetTile = parseInt(targetTileSelect.value);
@@ -494,12 +585,71 @@
             }
 
             updateDisplayFromData(data.board, data.score, data.steps, data.stuck, data.reached_2048, data.rows, data.cols, data.current_seed, data.target_tile);
+            return data.moved;
         }
         catch (error) {
             console.error('Error sending move operation:', error);
             messageDiv.textContent = `Error sending move operation: ${error.message}.`;
+            return false;
         }
     }
+
+    async function playSequence() {
+        if (isPlayingSequence) {
+            messageDiv.textContent = "A sequence is already playing.";
+            return;
+        }
+
+        const sequence = sequenceInput.value.toLowerCase().trim();
+        if (!sequence) {
+            messageDiv.textContent = "Please enter a sequence to play.";
+            return;
+        }
+
+        const delay = parseInt(sequenceDelayInput.value);
+        if (isNaN(delay) || delay < 50) {
+            messageDiv.textContent = "Invalid delay. Using default 200ms.";
+            sequenceDelayInput.value = 200; // Reset to default if invalid
+        }
+
+        isPlayingSequence = true; // Set flag
+        playSequenceButton.disabled = true;
+        initButton.disabled = true; // Also disable new game during playback
+        messageDiv.textContent = "Playing sequence...";
+
+        for (let i = 0; i < sequence.length; i++) {
+            const char = sequence[i];
+            let handled = false;
+
+            switch (char) {
+                case 'w':
+                case 'a':
+                case 's':
+                case 'd':
+                    await sendMove(char);
+                    handled = true;
+                    break;
+                case 'z':
+                    await undoMove();
+                    handled = true;
+                    break;
+                default:
+                    console.warn(`Skipping unknown character in sequence: ${char}`);
+                    messageDiv.textContent = `Skipping invalid char '${char}'...`;
+                    break;
+            }
+            if (handled) {
+                await new Promise(resolve => setTimeout(resolve, delay));
+            } else if (char !== ' ') { // Only delay for non-space, non-handled characters
+                await new Promise(resolve => setTimeout(resolve, 50)); // Small delay for ignored chars
+            }
+        }
+        messageDiv.textContent = "Sequence playback finished.";
+        isPlayingSequence = false; // Reset flag
+        playSequenceButton.disabled = false;
+        initButton.disabled = false;
+    }
+
 
     function updateDisplayFromData(boardString, score, steps, stuck, reachedTarget, rows, cols, seed, target_tile) {
         currentRows = rows;
@@ -529,6 +679,7 @@
             });
         });
 
+        headerTargetDisplay.textContent = target_tile;
         scoreDisplay.textContent = score;
         stepsDisplay.textContent = steps;
         currentSeedDisplay.textContent = seed;
@@ -566,6 +717,10 @@
                 aboutInfo += "\n--- Controls ---\n";
                 aboutInfo += "Keyboard: Use W, A, S, D or Arrow Keys for movement.\n";
                 aboutInfo += "Press 'Z' to Undo the last move.\n";
+                aboutInfo += "\n--- Control Sequence Information ---\n";
+                aboutInfo += "Paste your \"wsadz\" sequence to simulate keyboard input.\n";
+                aboutInfo += "You can choose the time interval per move.\n";
+                aboutInfo += "Be aware that keyboard input is still available at executing the sequence and will jump into the queue.\n";
 
                 aboutContentDiv.textContent = aboutInfo;
                 aboutContentDiv.style.display = 'block';
