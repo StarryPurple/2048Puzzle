@@ -381,7 +381,7 @@
     <input type="text" id="sequenceInput" placeholder="Paste wsadz sequence (e.g., wwssdaz)">
     <div id="delay-control-group">
         <label for="sequenceDelayInput">Step Delay (ms):</label>
-        <input type="number" id="sequenceDelayInput" value="200" min="50">
+        <input type="number" id="sequenceDelayInput" value="200" min="20">
     </div>
     <button id="playSequenceButton">Play Sequence</button>
 </div>
@@ -530,6 +530,10 @@
     }
 
     async function handleKeyPress(event) {
+        const targetTagName = event.target.tagName.toLowerCase();
+        if (targetTagName === 'input' || targetTagName === 'textarea' || targetTagName === 'select') {
+            return;
+        }
         let direction = '';
         switch (event.key) {
             case 'w':
@@ -625,7 +629,7 @@
         }
 
         const delay = parseInt(sequenceDelayInput.value);
-        if (isNaN(delay) || delay < 50) {
+        if (isNaN(delay) || delay < 20) {
             messageDiv.textContent = "Invalid delay. Using default 200ms.";
             sequenceDelayInput.value = 200; // Reset to default if invalid
         }
