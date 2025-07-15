@@ -11,7 +11,7 @@ namespace PZ2048 {
 /**
  * Initialize and start a Puzzle2048 game.
  */
-void Start(int row_num, int col_num, uint game_seed);
+void Start(int row_num, int col_num, int target = 2048, uint game_seed = 0);
 
 /**
  * End the game.
@@ -86,9 +86,15 @@ int Score();
 int Steps();
 
 /**
+ *
+ * @return The target set before this game.
+ */
+int GetTarget();
+
+/**
  * @return whether the largest number on the board reaches the given value.
  */
-bool HasReachedTarget(int target);
+bool HasReachedTarget();
 
 /**
  * @return whether no valid operation can be performed.
@@ -111,7 +117,13 @@ bool Stuck();
  * >1024 8    0    4   (\n here)
  * >0    256  128  2   (\n here)
  * >
- * (Since endline spaces are filtered, reserving them is optional.)
+ * or:
+ * >0    2    2    16(\n here)
+ * >2    4    16   4(\n here)
+ * >1024 8    0    4(\n here)
+ * >0    256  128  2(\n here)
+ * >
+ * (Since unseeable spaces are filtered, reserving them is optional.)
  *
  *
  * Hint: std::setw(int), std::left
@@ -131,6 +143,10 @@ bool Redo();
 
 // Actually the following functions should also be written in server.cpp.
 // But for banning you from overwriting, we choose to define here.
+
+inline uint GetCurrentSeed() {
+  return get_seed();
+}
 
 /**
  * This function is designed for debugging and testing.

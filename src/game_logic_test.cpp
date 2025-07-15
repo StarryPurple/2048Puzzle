@@ -4,6 +4,7 @@
 
 using namespace PZ2048;
 
+// target -> {8, 16, 32, ..., 8192}
 void check_target(int &target) {
   if(target <= 4) {
     target = 8;
@@ -32,7 +33,7 @@ int main() {
   std::cin >> row_num >> col_num >> target >> seed;
   check_target(target);
 
-  Start(row_num, col_num, seed);
+  Start(row_num, col_num, target, seed);
   int index = 0; // number of commands the user tried to operate
   std::cout << '[' << index << "] ";
   std::cout << "Steps: " << Steps() << " Score: " << Score() << '\n';
@@ -65,7 +66,7 @@ int main() {
     }
     std::cout << "Steps: " << Steps() << " Score: " << Score() << '\n';
     PrintBoard();
-    if(HasReachedTarget(target)) {
+    if(HasReachedTarget()) {
       std::cout << "You've merged a " << target << " tile!\n";
       break;
     }

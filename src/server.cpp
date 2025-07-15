@@ -5,13 +5,14 @@
 #include <stdexcept>
 #include <random>
 #include <algorithm>
-#include "../third_party/Crow/include/crow/middlewares/cors.h"
+#include "crow/middlewares/cors.h"
 
 int main() {
     crow::App<crow::CORSHandler> app;
 
     auto& cors = app.get_middleware<crow::CORSHandler>();
-    cors.global()
+    cors
+        .global()
         .origin("*")
         .methods("POST"_method)
         .methods("GET"_method)
@@ -28,12 +29,12 @@ int main() {
 
     CROW_ROUTE(app, "/init")
     .methods("POST"_method)([&](const crow::request& req){
-        std::random_device rd;
-        std::mt19937 gen(rd());
-
         crow::json::rvalue request_body_json;
         int rows = 4;
         int cols = 4;
+        int target_tile = 2048;
+        unsigned int user_provided_seed = 0;
+
         try {
             request_body_json = crow::json::load(req.body);
             if (request_body_json.has("rows") && request_body_json["rows"].t() == crow::json::type::Number) {
@@ -42,21 +43,29 @@ int main() {
             if (request_body_json.has("cols") && request_body_json["cols"].t() == crow::json::type::Number) {
                 cols = static_cast<int>(request_body_json["cols"].d());
             }
+            if (request_body_json.has("target_tile") && request_body_json["target_tile"].t() == crow::json::type::Number) {
+                target_tile = static_cast<int>(request_body_json["target_tile"].d());
+            }
+            if (request_body_json.has("seed") && request_body_json["seed"].t() == crow::json::type::Number) {
+                user_provided_seed = static_cast<unsigned int>(request_body_json["seed"].d());
+            }
         } catch (const std::runtime_error& e) {
         }
 
         rows = std::max(1, std::min(10, rows));
         cols = std::max(1, std::min(10, cols));
 
-        PZ2048::Start(rows, cols, gen());
+        PZ2048::Start(rows, cols, target_tile, user_provided_seed);
 
         crow::json::wvalue response_json;
         response_json["message"] = "Game initialized successfully!";
         response_json["board"] = PZ2048::SerializeBoard();
         response_json["score"] = PZ2048::Score();
         response_json["steps"] = PZ2048::Steps();
-        response_json["rows"] = rows;
-        response_json["cols"] = cols;
+        response_json["rows"] = PZ2048::GetRows();
+        response_json["cols"] = PZ2048::GetCols();
+        response_json["current_seed"] = PZ2048::GetCurrentSeed();
+        response_json["target_tile"] = PZ2048::GetTarget();
 
         crow::response res(200, response_json);
         res.set_header("Content-Type", "application/json");
@@ -111,6 +120,8 @@ int main() {
         response_json["rows"] = PZ2048::GetRows();
         response_json["cols"] = PZ2048::GetCols();
         response_json["reached_2048"] = PZ2048::HasReachedTarget();
+        response_json["target_tile"] = PZ2048::GetTarget();
+        response_json["current_seed"] = PZ2048::GetCurrentSeed();
 
         crow::response res(200, response_json);
         res.set_header("Content-Type", "application/json");
@@ -131,6 +142,8 @@ int main() {
         response_json["cols"] = PZ2048::GetCols();
         response_json["stuck"] = PZ2048::Stuck();
         response_json["reached_2048"] = PZ2048::HasReachedTarget();
+        response_json["target_tile"] = PZ2048::GetTarget();
+        response_json["current_seed"] = PZ2048::GetCurrentSeed();
 
         crow::response res(200, response_json);
         res.set_header("Content-Type", "application/json");
@@ -146,9 +159,31 @@ int main() {
         response_json["rows"] = PZ2048::GetRows();
         response_json["cols"] = PZ2048::GetCols();
         response_json["reached_2048"] = PZ2048::HasReachedTarget();
+        response_json["target_tile"] = PZ2048::GetTarget();
+        response_json["current_seed"] = PZ2048::GetCurrentSeed();
 
         crow::response res(200, response_json);
         res.set_header("Content-Type", "application/json");
+        return res;
+    });
+
+    CROW_ROUTE(app, "/about")([](){
+        std::string about_content =
+            "Welcome to the C++ 2048 Game!\n\n"
+            "This is a simple backend implementation using the Crow C++ web framework with the help of Google Gemini.\n"
+            "You can play the classic 2048 game, customize board dimensions, set a target tile, and even play with a fixed random seed to reproduce specific game scenarios.\n\n"
+            "How to Play:\n"
+            "- Use 'w', 'a', 's', 'd' to move tiles Up, Left, Down, or Right respectively.\n"
+            "- Two tiles with the same number merge into one tile with the sum of their values.\n"
+            "- The goal is to reach the target tile (default 2048) by combining tiles.\n\n"
+            "Customization Options:\n"
+            "- Board Dimensions: Choose rows and columns (1-10).\n"
+            "- Target Tile: Set your winning tile (e.g., 1024, 4096, 8192). The dropdown ensures valid power-of-2 numbers.\n"
+            "- Game Seed: Enter an integer to play a fixed game, or select 'Random Seed' for a new challenge.\n\n"
+            "Enjoy the game!";
+
+        crow::response res(200, about_content);
+        res.set_header("Content-Type", "text/plain");
         return res;
     });
 

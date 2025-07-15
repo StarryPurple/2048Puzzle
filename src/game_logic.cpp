@@ -16,16 +16,17 @@ namespace PZ2048 {
 // Don't try to use extern variables from user_logic.cpp. You're not supposed to communicate through this way.
 // After all, the game logic on the online judger won't contain extern variables same as yours.
 
-inline int rows, cols, steps, score, prev_steps, prev_score;
-inline std::vector<std::vector<int>> board, prev_board;
-inline bool prev_valid;
+static int rows, cols, steps, score, prev_steps, prev_score, puzzle_target;
+static std::vector<std::vector<int>> board, prev_board;
+static bool prev_valid;
 
 // You are free to add helper functions.
 
-void Start(int row_num, int col_num, uint game_seed) {
+void Start(int row_num, int col_num, int target, uint game_seed) {
   srand(game_seed); // Should be the PZ2048::srand(uint).
   rows = row_num;
   cols = col_num;
+  puzzle_target = target;
 
   // You may want to add more lines.
   steps = 0;
@@ -217,10 +218,13 @@ int Score() { return score; }
 
 int Steps() { return steps; }
 
-bool HasReachedTarget(int target) {
+int GetTarget() { return puzzle_target; }
+
+
+bool HasReachedTarget() {
   for(int i = 0; i < rows; i++)
     for(int j = 0; j < cols; j++)
-      if(board[i][j] >= target) {
+      if(board[i][j] >= puzzle_target) {
         return true;
       }
   return false;
